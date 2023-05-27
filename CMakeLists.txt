@@ -3,4 +3,4 @@ project(laba7)
 
 set(CMAKE_CXX_STANDARD 23)
 
-add_executable(laba7 main.cpp)
+add_executable(laba7 main.cpp car.cpp person.cpp func.cpp)
