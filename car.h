@@ -26,23 +26,6 @@ class Manufacturer {
         string getManuf() const { return manuf; }
         int getSpeed() const { return speed; }
         int getYear() const { return year; }
-        int getKey() const { return key2; }
-        bool getEtap() const { return etap; }
-
-
-        void setManuf(string s){
-            this->manuf = s;
-        }
-        void setYear(size_t y){
-            this->year = y;
-        }
-        void setSpeed(size_t s){
-            this->speed = s;
-        }
-        void setKey(size_t s){
-            this->key2 = s;
-        }
-        bool setEtap(bool et) { this->etap = et; }
 
         virtual void print() const{
             cout << left << setw(17) << manuf << left << setw(7) << speed << left << setw(7) << year << left << setw(7);
@@ -52,7 +35,7 @@ class Manufacturer {
             out << manuf << "\t" << speed << "\t" << year << "\t" << key2 << "\t";
         }
     };
-    //Model** model{nullptr};
+
     vector <Model*>model;
 
     class ElectricCar : public Model{
@@ -108,7 +91,6 @@ public:
       model.push_back(other);
     };
 
-   // Manufacturer& operator= (const Manufacturer& other);
     friend istream& operator>>(istream& in, vector<Manufacturer>& manufacturer);
     friend ostream& operator<<(ostream&out, vector<Manufacturer>manufacturer);
 
@@ -116,8 +98,6 @@ public:
         return model[index];
     }
 
-    size_t getNumberOfCars() const;
-    void setNumberOfCars(int num);
     static Model * random();
 
     void print(){

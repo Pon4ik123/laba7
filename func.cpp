@@ -35,7 +35,6 @@ void create(vector<Person>& person) {
 }
 
 void show(const vector<Person>& person) {
-    cout << "======================" << endl;
     cout << "========== Person ==========\n" << endl;
     for(int i = 0; i < person.size(); i++){
     Person temp;
