@@ -1,4 +1,2 @@
-Chevrolet        234    2016   8773   
-Chevrolet        294    2007   7296   
-Toyota           248    2007   7363   
-Toyota           227    2020   9433   
+2	1	1	Chevrolet	269	2013	8411	95
+1	Chevrolet	227	2013	3733	53

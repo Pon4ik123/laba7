@@ -38,12 +38,26 @@ public:
         pesel = peselDist(dfe);
         name = sPerson[dfe() % (sizeof(sPerson) / sizeof(string))];
     }
+
+    void operator()(){
+        cout << "Name: " <<name << endl;
+        cout << "Age: " << age << endl;
+        cout << "PESEL: " <<pesel << endl;
+        if (key1 != 0) {
+            cout << "Key: " <<key1 << endl;
+        }
+        else {
+            cout << "This person doesn't have a car" << endl;
+        }
+        cout << "\n";
+    }
+
 };
 
 void menu();
-void create(vector<Person*>& person, const size_t size);
-void show(const vector<Person*>& person/*Person** person, const size_t size*/);
-void add(vector<Person*>& person/*Person**& person, size_t& size*/);
-void delete_(vector<Person*>& person, size_t size, size_t index);
-void edit(vector<Person*> person, const size_t size, const size_t index);
-void find(const vector<Person*>& person, const size_t size);
+void create(vector<Person>& person);
+void show(const vector<Person>& person);
+void add(vector<Person>& person);
+void delete_(vector<Person>& person, size_t index);
+void edit(vector<Person>& person, const size_t index);
+void find(const vector<Person>& person);

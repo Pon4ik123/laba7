@@ -4,14 +4,9 @@ using namespace std;
 
 int main() {
     int choice;
-    size_t number_of_manufacturer = 2;//random(1, 10);
     size_t index;
-
-    //Person** person{ nullptr };
-    vector<Person*>person;
-    //Manufacturer** manufacturer{nullptr };
-    vector<Manufacturer*>manufacturer;
-
+    vector<Person>person;
+    vector<Manufacturer>manufacturer;
 
     do {
         menu();
@@ -19,7 +14,7 @@ int main() {
         cin >> choice;
         switch (choice) {
             case 1:
-                create(person, number_of_manufacturer);
+                create(person);
                 break;
             case 2:
                 show(person);
@@ -30,49 +25,44 @@ int main() {
             case 4:
                 cout << "Which one do you want to delete?: ";
                 cin >> index;
-                delete_(person, number_of_manufacturer, index);
+                delete_(person, index);
                 break;
             case 5:
                 cout << "Which one do you want to edit?: ";
                 cin >> index;
-                edit(person, number_of_manufacturer, index);
+                edit(person, index);
                 break;
             case 6:
-                find(person, number_of_manufacturer);
+                find(person);
                 break;
             case 7:
-                create(manufacturer, number_of_manufacturer);
+                create(manufacturer);
                 break;
             case 8:
-                show(manufacturer, number_of_manufacturer);
+                show(manufacturer);
                 break;
             case 9:
-                add(manufacturer, number_of_manufacturer);
+                add(manufacturer);
                 break;
             case 10:
-                delete_(manufacturer, number_of_manufacturer);
+                delete_(manufacturer);
                 break;
             case 11:
                 cout << "Which one do you want to change?: ";
                 cin >> index;
-                edit(manufacturer, number_of_manufacturer, index);
+                edit(manufacturer,index);
                 break;
             case 12:
-                find(manufacturer, number_of_manufacturer);
+                find(manufacturer);
                 break;
-            case 13:
-                buyCar(manufacturer, person, number_of_manufacturer);
-                break;
+            case 13:{
+                ifstream file("test1.txt");
+                if (file.is_open()){
+                    file >> manufacturer;
+                }
+                file.close();
+               break;}
             case 14:
-                openCar(manufacturer, person, number_of_manufacturer);
-                break;
-            case 15:
-                move_to_file();
-                break;
-            //case 16:
-               // read_from_file(manufacturer, number_of_manufacturer);
-               //break;
-            case 17:
                 cout << "Thank you for visit, see you next time" << endl;
                 break;
             default:
@@ -80,7 +70,7 @@ int main() {
                 continue;
         }
 
-    } while (choice != 17);
+    } while (choice != 14);
 
     return 0;
 }
